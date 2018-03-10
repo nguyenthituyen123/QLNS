@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PhanMemQLNS" Class="DataClasses_NSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-UU7V8Q9;Initial Catalog=PhanMemQLNS;Integrated Security=True" SettingsObjectName="PhanMemQLNS.Properties.Settings" SettingsPropertyName="PhanMemQLNSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BangCong" Member="BangCongs">
+    <Type Name="BangCong">
+      <Column Name="MaTinhCong" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CheDoCong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoCongNghi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoCongTangCa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaTinhLuong" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BangLuong_BangCong" Member="BangLuong" ThisKey="MaTinhLuong" OtherKey="MaTinhLuong" Type="BangLuong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhongBan" Member="PhongBans">
+    <Type Name="PhongBan">
+      <Column Name="MaPB" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TenPB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiPB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SĐT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmailPB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChiNhanhPB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChiPB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NhanVien_PhongBan" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BangLuong" Member="BangLuongs">
+    <Type Name="BangLuong">
+      <Column Name="MaTinhLuong" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HeSoLuong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[LuongCoBan/Ngay]" Member="LuongCoBan_Ngay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Thuong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TamUng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="BangLuong_BangCong" Member="BangCongs" ThisKey="MaTinhLuong" OtherKey="MaTinhLuong" Type="BangCong" />
+      <Association Name="BangLuong_NhanVien" Member="NhanViens" ThisKey="MaTinhLuong" OtherKey="MaTinhLuong" Type="NhanVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietHĐ" Member="ChiTietHĐs">
+    <Type Name="ChiTietHĐ">
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaHĐ" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayKyHĐ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayKetThucHĐ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HopDong_ChiTietHĐ" Member="HopDong" ThisKey="MaHĐ" OtherKey="MaHĐ" Type="HopDong" IsForeignKey="true" />
+      <Association Name="NhanVien_ChiTietHĐ" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChucVu" Member="ChucVus">
+    <Type Name="ChucVu">
+      <Column Name="MaCV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TenCV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhuCapCV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="QuyenHan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NhiemVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NhanVien_ChucVu" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DangNhap" Member="DangNhaps">
+    <Type Name="DangNhap">
+      <Column Name="Username" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[Ghi chu]" Member="Ghi_chu" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HopDong" Member="HopDongs">
+    <Type Name="HopDong">
+      <Column Name="MaHĐ" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenHĐ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiHĐ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThoiHan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HopDong_ChiTietHĐ" Member="ChiTietHĐs" ThisKey="MaHĐ" OtherKey="MaHĐ" Type="ChiTietHĐ" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SĐT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaTinhLuong" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NhanVien_PhongBan" Member="PhongBans" ThisKey="MaNV" OtherKey="MaNV" Type="PhongBan" />
+      <Association Name="NhanVien_ChiTietHĐ" Member="ChiTietHĐs" ThisKey="MaNV" OtherKey="MaNV" Type="ChiTietHĐ" />
+      <Association Name="NhanVien_ChucVu" Member="ChucVus" ThisKey="MaNV" OtherKey="MaNV" Type="ChucVu" />
+      <Association Name="BangLuong_NhanVien" Member="BangLuong" ThisKey="MaTinhLuong" OtherKey="MaTinhLuong" Type="BangLuong" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

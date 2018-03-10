@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{674B8F7F-E0A8-4421-AF1E-CDF5496724BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PhanMemQLNS</RootNamespace>
+    <AssemblyName>PhanMemQLNS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BANGCONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BANGCONG.Designer.cs">
+      <DependentUpon>BANGCONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BANGLUONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BANGLUONG.Designer.cs">
+      <DependentUpon>BANGLUONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BAOCAO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BAOCAO.Designer.cs">
+      <DependentUpon>BAOCAO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETHĐ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHITIETHĐ.Designer.cs">
+      <DependentUpon>CHITIETHĐ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHUCVU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHUCVU.Designer.cs">
+      <DependentUpon>CHUCVU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class_BANGLUONG.cs" />
+    <Compile Include="Class_checker.cs" />
+    <Compile Include="Class_connect.cs" />
+    <Compile Include="Class_dangnhap.cs" />
+    <Compile Include="DANGNHAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DANGNHAP.Designer.cs">
+      <DependentUpon>DANGNHAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DOIMATKHAU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DOIMATKHAU.Designer.cs">
+      <DependentUpon>DOIMATKHAU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOPDONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOPDONG.Designer.cs">
+      <DependentUpon>HOPDONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kiemtradoimatkhau.cs" />
+    <Compile Include="LQTOSQL\DataClasses_NS.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses_NS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DANHMUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DANHMUC.Designer.cs">
+      <DependentUpon>DANHMUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NHANVIEN.Designer.cs">
+      <DependentUpon>NHANVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PHONGBAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PHONGBAN.Designer.cs">
+      <DependentUpon>PHONGBAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="LQTOSQL\DataClasses_NS.dbml.layout">
+      <DependentUpon>DataClasses_NS.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="BANGCONG.resx">
+      <DependentUpon>BANGCONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BANGLUONG.resx">
+      <DependentUpon>BANGLUONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DANGNHAP.resx">
+      <DependentUpon>DANGNHAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DANHMUC.resx">
+      <DependentUpon>DANHMUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DOIMATKHAU.resx">
+      <DependentUpon>DOIMATKHAU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="LQTOSQL\DataClasses_NS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses_NS.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
