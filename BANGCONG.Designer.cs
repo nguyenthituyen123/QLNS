@@ -102,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(419, 19);
+            this.label4.Location = new System.Drawing.Point(422, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 13);
             this.label4.TabIndex = 6;
@@ -111,7 +111,7 @@
             // cbb_matinhluong
             // 
             this.cbb_matinhluong.FormattingEnabled = true;
-            this.cbb_matinhluong.Location = new System.Drawing.Point(538, 19);
+            this.cbb_matinhluong.Location = new System.Drawing.Point(538, 27);
             this.cbb_matinhluong.Name = "cbb_matinhluong";
             this.cbb_matinhluong.Size = new System.Drawing.Size(121, 21);
             this.cbb_matinhluong.TabIndex = 7;
@@ -119,7 +119,7 @@
             // txt_socongtangca
             // 
             this.txt_socongtangca.AutoSize = true;
-            this.txt_socongtangca.Location = new System.Drawing.Point(419, 53);
+            this.txt_socongtangca.Location = new System.Drawing.Point(422, 67);
             this.txt_socongtangca.Name = "txt_socongtangca";
             this.txt_socongtangca.Size = new System.Drawing.Size(86, 13);
             this.txt_socongtangca.TabIndex = 8;
@@ -135,7 +135,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(419, 100);
+            this.label5.Location = new System.Drawing.Point(422, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 10;

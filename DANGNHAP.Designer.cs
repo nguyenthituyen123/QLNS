@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.bt_dangnhap = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.bt_doimatkhau = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +71,7 @@
             // 
             // bt_dangnhap
             // 
-            this.bt_dangnhap.Location = new System.Drawing.Point(28, 95);
+            this.bt_dangnhap.Location = new System.Drawing.Point(76, 95);
             this.bt_dangnhap.Name = "bt_dangnhap";
             this.bt_dangnhap.Size = new System.Drawing.Size(75, 23);
             this.bt_dangnhap.TabIndex = 4;
@@ -82,29 +81,18 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(230, 95);
+            this.button2.Location = new System.Drawing.Point(185, 95);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // bt_doimatkhau
-            // 
-            this.bt_doimatkhau.Location = new System.Drawing.Point(125, 95);
-            this.bt_doimatkhau.Name = "bt_doimatkhau";
-            this.bt_doimatkhau.Size = new System.Drawing.Size(88, 23);
-            this.bt_doimatkhau.TabIndex = 6;
-            this.bt_doimatkhau.Text = "Đổi mật khẩu";
-            this.bt_doimatkhau.UseVisualStyleBackColor = true;
-           
-            // 
             // DANGNHAP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 138);
-            this.Controls.Add(this.bt_doimatkhau);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.bt_dangnhap);
             this.Controls.Add(this.txt_pass);
@@ -127,6 +115,5 @@
         public System.Windows.Forms.TextBox txt_pass;
         public System.Windows.Forms.Button bt_dangnhap;
         public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button bt_doimatkhau;
     }
 }
