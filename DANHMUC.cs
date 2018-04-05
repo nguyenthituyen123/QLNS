@@ -20,6 +20,11 @@ namespace PhanMemQLNS
             password = pass;
         }
 
+        public DANHMUC()
+        {
+            // TODO: Complete member initialization
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,13 +38,13 @@ namespace PhanMemQLNS
 
         private void bt_hopdong_Click(object sender, EventArgs e)
         {
-            HOPDONG HD = new HOPDONG();
+            baitaplon2.frmHopDong HD = new baitaplon2.frmHopDong();
             HD.Show();
         }
 
         private void bt_chucvu_Click(object sender, EventArgs e)
         {
-            CHUCVU CV = new CHUCVU();
+            baitaplon2.frmChucvu CV = new baitaplon2.frmChucvu();
             CV.Show();
         }
 
@@ -51,8 +56,8 @@ namespace PhanMemQLNS
 
         private void bt_chitiethd_Click(object sender, EventArgs e)
         {
-            CHITIETHĐ CTHD = new CHITIETHĐ();
-            CTHD.Show();
+            baitaplon2.frmChucvu CTHĐ = new baitaplon2.frmChucvu();
+            CTHĐ.Show();
         }
 
         private void bt_phongban_Click(object sender, EventArgs e)
