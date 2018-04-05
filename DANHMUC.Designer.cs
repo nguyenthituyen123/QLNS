@@ -36,7 +36,6 @@
             this.bt_bangcong = new System.Windows.Forms.Button();
             this.bt_bangluong = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bt_baocao = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.bt_dmk = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -45,7 +44,7 @@
             // bt_nhanvien
             // 
             this.bt_nhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_nhanvien.Location = new System.Drawing.Point(7, 19);
+            this.bt_nhanvien.Location = new System.Drawing.Point(134, 200);
             this.bt_nhanvien.Name = "bt_nhanvien";
             this.bt_nhanvien.Size = new System.Drawing.Size(167, 50);
             this.bt_nhanvien.TabIndex = 0;
@@ -111,7 +110,7 @@
             // bt_bangluong
             // 
             this.bt_bangluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_bangluong.Location = new System.Drawing.Point(7, 191);
+            this.bt_bangluong.Location = new System.Drawing.Point(6, 19);
             this.bt_bangluong.Name = "bt_bangluong";
             this.bt_bangluong.Size = new System.Drawing.Size(167, 50);
             this.bt_bangluong.TabIndex = 6;
@@ -121,7 +120,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bt_baocao);
             this.groupBox1.Controls.Add(this.bt_bangluong);
             this.groupBox1.Controls.Add(this.bt_bangcong);
             this.groupBox1.Controls.Add(this.bt_chucvu);
@@ -135,17 +133,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản lý danh mục";
-            // 
-            // bt_baocao
-            // 
-            this.bt_baocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_baocao.Location = new System.Drawing.Point(273, 191);
-            this.bt_baocao.Name = "bt_baocao";
-            this.bt_baocao.Size = new System.Drawing.Size(167, 50);
-            this.bt_baocao.TabIndex = 7;
-            this.bt_baocao.Text = "BÁO CÁO";
-            this.bt_baocao.UseVisualStyleBackColor = true;
-            this.bt_baocao.Click += new System.EventHandler(this.bt_baocao_Click);
             // 
             // button1
             // 
@@ -195,7 +182,6 @@
         public System.Windows.Forms.Button bt_bangcong;
         public System.Windows.Forms.Button bt_bangluong;
         public System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Button bt_baocao;
         public System.Windows.Forms.Button bt_dmk;
     }
 }

@@ -67,11 +67,7 @@ namespace PhanMemQLNS
             BC.Show();
         }
 
-        private void bt_baocao_Click(object sender, EventArgs e)
-        {
-            BAOCAO B = new BAOCAO();
-            B.Show();
-        }
+        
 
         private void bt_dmk_Click(object sender, EventArgs e)
         {

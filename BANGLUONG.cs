@@ -18,7 +18,8 @@ namespace PhanMemQLNS
             InitializeComponent();
             bangluong = new Class_BANGLUONG();
             bangluong.loaddulieu(this);
-            txt_ngaytao.Text = DateTime.Now.ToString();
+            //txt_ngaytao.Text = DateTime.Now.ToString();
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -31,9 +32,14 @@ namespace PhanMemQLNS
                 txt_luongcoban.Text = dgv_bangluong.Rows[donghientai].Cells[2].Value.ToString();
                 txt_thuong.Text = dgv_bangluong.Rows[donghientai].Cells[3].Value.ToString();
                 txt_tamung.Text = dgv_bangluong.Rows[donghientai].Cells[4].Value.ToString();
-                txt_ngaytao.Text = dgv_bangluong.Rows[donghientai].Cells[5].Value.ToString();
+                dt_ngaytao.Text = dgv_bangluong.Rows[donghientai].Cells[5].Value.ToString();
+                if(cbb_matinhluong.Text!="")
+                {
+                    bangluong.loaddulieucong(this);
+                }
             
             }
+            
         }
 
         private void bt_them_Click(object sender, EventArgs e)
@@ -58,6 +64,29 @@ namespace PhanMemQLNS
         {
             this.Close();
         }
+
+        private void bt_tinhluong_Click(object sender, EventArgs e)
+        {
+            int luongcoban = Convert.ToInt32(txt_luongcoban.Text);
+            int hesoluong = Convert.ToInt32(txt_hesoluong.Text);
+            int tamung = Convert.ToInt32(txt_tamung.Text);
+            int thuong = Convert.ToInt32(txt_thuong.Text);
+            lb_tongluong.Text = Convert.ToString(luongcoban * hesoluong - tamung + thuong);
+        }
+
+        private void lb_tongluong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+       
 
       
 

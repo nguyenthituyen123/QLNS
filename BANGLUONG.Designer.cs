@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lb_tongluong = new System.Windows.Forms.Label();
+            this.dt_ngaytao = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.cbb_matinhluong = new System.Windows.Forms.ComboBox();
-            this.txt_ngaytao = new System.Windows.Forms.TextBox();
             this.txt_tamung = new System.Windows.Forms.TextBox();
             this.txt_thuong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,18 +49,20 @@
             this.bt_tinhluong = new System.Windows.Forms.Button();
             this.dgv_bangluong = new System.Windows.Forms.DataGridView();
             this.bt_thoat = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_tongcong = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bangluong)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_tongcong);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.lb_tongluong);
+            this.groupBox1.Controls.Add(this.dt_ngaytao);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cbb_matinhluong);
-            this.groupBox1.Controls.Add(this.txt_ngaytao);
             this.groupBox1.Controls.Add(this.txt_tamung);
             this.groupBox1.Controls.Add(this.txt_thuong);
             this.groupBox1.Controls.Add(this.label6);
@@ -76,6 +80,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lương nhân viên";
             // 
+            // lb_tongluong
+            // 
+            this.lb_tongluong.BackColor = System.Drawing.Color.Yellow;
+            this.lb_tongluong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_tongluong.Location = new System.Drawing.Point(417, 108);
+            this.lb_tongluong.Name = "lb_tongluong";
+            this.lb_tongluong.Size = new System.Drawing.Size(115, 23);
+            this.lb_tongluong.TabIndex = 15;
+            this.lb_tongluong.Click += new System.EventHandler(this.lb_tongluong_Click);
+            // 
+            // dt_ngaytao
+            // 
+            this.dt_ngaytao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_ngaytao.Location = new System.Drawing.Point(417, 85);
+            this.dt_ngaytao.Name = "dt_ngaytao";
+            this.dt_ngaytao.Size = new System.Drawing.Size(115, 20);
+            this.dt_ngaytao.TabIndex = 14;
+            this.dt_ngaytao.Value = new System.DateTime(2018, 3, 22, 21, 43, 20, 0);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(336, 118);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Tổng lương";
+            // 
             // cbb_matinhluong
             // 
             this.cbb_matinhluong.FormattingEnabled = true;
@@ -83,13 +115,6 @@
             this.cbb_matinhluong.Name = "cbb_matinhluong";
             this.cbb_matinhluong.Size = new System.Drawing.Size(115, 21);
             this.cbb_matinhluong.TabIndex = 1;
-            // 
-            // txt_ngaytao
-            // 
-            this.txt_ngaytao.Location = new System.Drawing.Point(417, 85);
-            this.txt_ngaytao.Name = "txt_ngaytao";
-            this.txt_ngaytao.Size = new System.Drawing.Size(115, 20);
-            this.txt_ngaytao.TabIndex = 11;
             // 
             // txt_tamung
             // 
@@ -185,7 +210,7 @@
             // 
             // bt_xoa
             // 
-            this.bt_xoa.Location = new System.Drawing.Point(133, 166);
+            this.bt_xoa.Location = new System.Drawing.Point(126, 166);
             this.bt_xoa.Name = "bt_xoa";
             this.bt_xoa.Size = new System.Drawing.Size(75, 23);
             this.bt_xoa.TabIndex = 2;
@@ -195,7 +220,7 @@
             // 
             // bt_sua
             // 
-            this.bt_sua.Location = new System.Drawing.Point(242, 166);
+            this.bt_sua.Location = new System.Drawing.Point(232, 166);
             this.bt_sua.Name = "bt_sua";
             this.bt_sua.Size = new System.Drawing.Size(75, 23);
             this.bt_sua.TabIndex = 3;
@@ -205,12 +230,13 @@
             // 
             // bt_tinhluong
             // 
-            this.bt_tinhluong.Location = new System.Drawing.Point(361, 166);
+            this.bt_tinhluong.Location = new System.Drawing.Point(350, 166);
             this.bt_tinhluong.Name = "bt_tinhluong";
             this.bt_tinhluong.Size = new System.Drawing.Size(75, 23);
             this.bt_tinhluong.TabIndex = 4;
             this.bt_tinhluong.Text = "Tính lương";
             this.bt_tinhluong.UseVisualStyleBackColor = true;
+            this.bt_tinhluong.Click += new System.EventHandler(this.bt_tinhluong_Click);
             // 
             // dgv_bangluong
             // 
@@ -231,21 +257,22 @@
             this.bt_thoat.UseVisualStyleBackColor = true;
             this.bt_thoat.Click += new System.EventHandler(this.bt_thoat_Click);
             // 
-            // label7
+            // label8
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 123);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Tổng lương";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Tổng công";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox1
+            // txt_tongcong
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 20);
-            this.textBox1.TabIndex = 13;
+            this.txt_tongcong.Location = new System.Drawing.Point(140, 111);
+            this.txt_tongcong.Name = "txt_tongcong";
+            this.txt_tongcong.Size = new System.Drawing.Size(115, 20);
+            this.txt_tongcong.TabIndex = 17;
             // 
             // BANGLUONG
             // 
@@ -274,7 +301,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txt_ngaytao;
         public System.Windows.Forms.TextBox txt_tamung;
         public System.Windows.Forms.TextBox txt_thuong;
         private System.Windows.Forms.Label label6;
@@ -289,7 +315,10 @@
         public System.Windows.Forms.Button bt_them;
         public System.Windows.Forms.Button bt_thoat;
         public System.Windows.Forms.DataGridView dgv_bangluong;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.DateTimePicker dt_ngaytao;
+        private System.Windows.Forms.Label lb_tongluong;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txt_tongcong;
     }
 }

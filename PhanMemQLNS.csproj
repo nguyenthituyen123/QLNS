@@ -57,12 +57,6 @@
     <Compile Include="BANGLUONG.Designer.cs">
       <DependentUpon>BANGLUONG.cs</DependentUpon>
     </Compile>
-    <Compile Include="BAOCAO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BAOCAO.Designer.cs">
-      <DependentUpon>BAOCAO.cs</DependentUpon>
-    </Compile>
     <Compile Include="CHITIETHĐ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +69,7 @@
     <Compile Include="CHUCVU.Designer.cs">
       <DependentUpon>CHUCVU.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class_BANGCONG.cs" />
     <Compile Include="Class_BANGLUONG.cs" />
     <Compile Include="Class_checker.cs" />
     <Compile Include="Class_connect.cs" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PhanMemQLNS" Class="DataClasses_NSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-UU7V8Q9;Initial Catalog=PhanMemQLNS;Integrated Security=True" SettingsObjectName="PhanMemQLNS.Properties.Settings" SettingsPropertyName="PhanMemQLNSConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-UU7V8Q9\SQLEXPRESS;Initial Catalog=PhanMemQLNS;Integrated Security=True" SettingsObjectName="PhanMemQLNS.Properties.Settings" SettingsPropertyName="PhanMemQLNSConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BangCong" Member="BangCongs">
     <Type Name="BangCong">
       <Column Name="MaTinhCong" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -8,6 +8,9 @@
       <Column Name="SoCongTangCa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaTinhLuong" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DULIEUCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DateCreate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="BangLuong_BangCong" Member="BangLuong" ThisKey="MaTinhLuong" OtherKey="MaTinhLuong" Type="BangLuong" IsForeignKey="true" />
     </Type>
   </Table>
@@ -22,6 +25,7 @@
       <Column Name="ChiNhanhPB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DiaChiPB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NhanVien_PhongBan" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
@@ -34,7 +38,8 @@
       <Column Name="TamUng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TONGLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="BangLuong_BangCong" Member="BangCongs" ThisKey="MaTinhLuong" OtherKey="MaTinhLuong" Type="BangCong" />
       <Association Name="BangLuong_NhanVien" Member="NhanViens" ThisKey="MaTinhLuong" OtherKey="MaTinhLuong" Type="NhanVien" />
     </Type>
@@ -46,6 +51,7 @@
       <Column Name="NgayKyHĐ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NgayKetThucHĐ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HopDong_ChiTietHĐ" Member="HopDong" ThisKey="MaHĐ" OtherKey="MaHĐ" Type="HopDong" IsForeignKey="true" />
       <Association Name="NhanVien_ChiTietHĐ" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
     </Type>
@@ -59,6 +65,7 @@
       <Column Name="QuyenHan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NhiemVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NhanVien_ChucVu" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
@@ -76,6 +83,7 @@
       <Column Name="LoaiHĐ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ThoiHan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HopDong_ChiTietHĐ" Member="ChiTietHĐs" ThisKey="MaHĐ" OtherKey="MaHĐ" Type="ChiTietHĐ" />
     </Type>
   </Table>
@@ -89,10 +97,15 @@
       <Column Name="SĐT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="MaTinhLuong" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NhanVien_PhongBan" Member="PhongBans" ThisKey="MaNV" OtherKey="MaNV" Type="PhongBan" />
       <Association Name="NhanVien_ChiTietHĐ" Member="ChiTietHĐs" ThisKey="MaNV" OtherKey="MaNV" Type="ChiTietHĐ" />
       <Association Name="NhanVien_ChucVu" Member="ChucVus" ThisKey="MaNV" OtherKey="MaNV" Type="ChucVu" />
       <Association Name="BangLuong_NhanVien" Member="BangLuong" ThisKey="MaTinhLuong" OtherKey="MaTinhLuong" Type="BangLuong" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.laytongcong" Method="laytongcong" IsComposable="true">
+    <Parameter Name="MATL" Parameter="mATL" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Double" />
+  </Function>
 </Database>

@@ -26,10 +26,22 @@ namespace PhanMemQLNS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UU7V8Q9;Initial Catalog=PhanMemQLNS;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UU7V8Q9\\DELL;Initial Catalog=PhanMemQLNS;Integrated Security=" +
+            "True")]
         public string PhanMemQLNSConnectionString {
             get {
                 return ((string)(this["PhanMemQLNSConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UU7V8Q9\\SQLEXPRESS;Initial Catalog=PhanMemQLNS;Integrated Sec" +
+            "urity=True")]
+        public string PhanMemQLNSConnectionString1 {
+            get {
+                return ((string)(this["PhanMemQLNSConnectionString1"]));
             }
         }
     }

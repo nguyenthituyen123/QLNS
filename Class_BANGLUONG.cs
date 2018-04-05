@@ -19,9 +19,12 @@ namespace PhanMemQLNS
 
         public void loaddulieu(BANGLUONG f)
         {
-            var sql = data.database().BangLuongs.Where(a=>a.IsDelete==true);
+            var sql = data.database().BangLuongs.Where(a=>a.IsDelete == 1);
             f.dgv_bangluong.DataSource = sql;
         }
+
+
+        
 
         public void them(BANGLUONG f)
         {
@@ -31,9 +34,9 @@ namespace PhanMemQLNS
             bl.LuongCoBan_Ngay = f.txt_luongcoban.Text;
             bl.Thuong = f.txt_thuong.Text;
             bl.TamUng = f.txt_tamung.Text;
-            bl.NgayTao = Convert.ToDateTime(f.txt_ngaytao.Text);
-   
+            bl.NgayTao = Convert.ToDateTime(f.dt_ngaytao.Text);
 
+            bl.IsDelete = 1;
             data.database().BangLuongs.InsertOnSubmit(bl);
             data.database().SubmitChanges();
 
@@ -48,7 +51,7 @@ namespace PhanMemQLNS
         public void xoa(BANGLUONG f)
         {
             var sql = data.database().BangLuongs.SingleOrDefault(a => a.MaTinhLuong == f.cbb_matinhluong.Text);
-            sql.IsDelete = false;
+            sql.IsDelete = 0;
             data.database().SubmitChanges();
             loaddulieu(f);
         }
@@ -59,12 +62,28 @@ namespace PhanMemQLNS
             sql.LuongCoBan_Ngay = f.txt_luongcoban.Text;
             sql.Thuong = f.txt_thuong.Text;
             sql.TamUng = f.txt_tamung.Text;
-            sql.NgayTao = Convert.ToDateTime(f.txt_ngaytao.Text);
+           // sql.NgayTao = f.dt_ngaytao; 
+            sql.NgayTao = Convert.ToDateTime(f.dt_ngaytao.Text);
      
 
             data.database().SubmitChanges();
             loaddulieu(f);
         }
 
+        public void loaddulieucbbbc(BANGLUONG f1)
+        {
+            var sql = data.database().BangCongs.Where(a => a.IsDelete == 1);
+            f1.cbb_matinhluong.DataSource = sql;
+            f1.cbb_matinhluong.DisplayMember = "TongCong";
+            f1.cbb_matinhluong.ValueMember = "TongCong";
+        }
+
+
+        public void loaddulieucong(BANGLUONG f)
+        {
+            var sql = data.database().laytongcong(f.cbb_matinhluong.Text);
+            f.txt_tongcong.Text = sql.Value.ToString();
+
+        }
     }
 }

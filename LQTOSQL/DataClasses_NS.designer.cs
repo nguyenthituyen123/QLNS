@@ -57,7 +57,7 @@ namespace PhanMemQLNS.LQTOSQL
     #endregion
 		
 		public DataClasses_NSDataContext() : 
-				base(global::PhanMemQLNS.Properties.Settings.Default.PhanMemQLNSConnectionString, mappingSource)
+				base(global::PhanMemQLNS.Properties.Settings.Default.PhanMemQLNSConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -149,6 +149,12 @@ namespace PhanMemQLNS.LQTOSQL
 				return this.GetTable<NhanVien>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.laytongcong", IsComposable=true)]
+		public System.Nullable<double> laytongcong([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MATL", DbType="NChar(10)")] string mATL)
+		{
+			return ((System.Nullable<double>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mATL).ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BangCong")]
@@ -169,6 +175,12 @@ namespace PhanMemQLNS.LQTOSQL
 		
 		private string _GhiChu;
 		
+		private System.Nullable<int> _IsDelete;
+		
+		private System.Nullable<double> _DULIEUCONG;
+		
+		private System.Nullable<System.DateTime> _DateCreate;
+		
 		private EntityRef<BangLuong> _BangLuong;
 		
     #region Extensibility Method Definitions
@@ -187,6 +199,12 @@ namespace PhanMemQLNS.LQTOSQL
     partial void OnMaTinhLuongChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
+    partial void OnIsDeleteChanging(System.Nullable<int> value);
+    partial void OnIsDeleteChanged();
+    partial void OnDULIEUCONGChanging(System.Nullable<double> value);
+    partial void OnDULIEUCONGChanged();
+    partial void OnDateCreateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateCreateChanged();
     #endregion
 		
 		public BangCong()
@@ -319,6 +337,66 @@ namespace PhanMemQLNS.LQTOSQL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Int")]
+		public System.Nullable<int> IsDelete
+		{
+			get
+			{
+				return this._IsDelete;
+			}
+			set
+			{
+				if ((this._IsDelete != value))
+				{
+					this.OnIsDeleteChanging(value);
+					this.SendPropertyChanging();
+					this._IsDelete = value;
+					this.SendPropertyChanged("IsDelete");
+					this.OnIsDeleteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DULIEUCONG", DbType="Float")]
+		public System.Nullable<double> DULIEUCONG
+		{
+			get
+			{
+				return this._DULIEUCONG;
+			}
+			set
+			{
+				if ((this._DULIEUCONG != value))
+				{
+					this.OnDULIEUCONGChanging(value);
+					this.SendPropertyChanging();
+					this._DULIEUCONG = value;
+					this.SendPropertyChanged("DULIEUCONG");
+					this.OnDULIEUCONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateCreate
+		{
+			get
+			{
+				return this._DateCreate;
+			}
+			set
+			{
+				if ((this._DateCreate != value))
+				{
+					this.OnDateCreateChanging(value);
+					this.SendPropertyChanging();
+					this._DateCreate = value;
+					this.SendPropertyChanged("DateCreate");
+					this.OnDateCreateChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BangLuong_BangCong", Storage="_BangLuong", ThisKey="MaTinhLuong", OtherKey="MaTinhLuong", IsForeignKey=true)]
 		public BangLuong BangLuong
 		{
@@ -398,6 +476,8 @@ namespace PhanMemQLNS.LQTOSQL
 		
 		private string _GhiChu;
 		
+		private System.Nullable<int> _IsDelete;
+		
 		private EntityRef<NhanVien> _NhanVien;
 		
     #region Extensibility Method Definitions
@@ -422,6 +502,8 @@ namespace PhanMemQLNS.LQTOSQL
     partial void OnDiaChiPBChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
+    partial void OnIsDeleteChanging(System.Nullable<int> value);
+    partial void OnIsDeleteChanged();
     #endregion
 		
 		public PhongBan()
@@ -614,6 +696,26 @@ namespace PhanMemQLNS.LQTOSQL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Int")]
+		public System.Nullable<int> IsDelete
+		{
+			get
+			{
+				return this._IsDelete;
+			}
+			set
+			{
+				if ((this._IsDelete != value))
+				{
+					this.OnIsDeleteChanging(value);
+					this.SendPropertyChanging();
+					this._IsDelete = value;
+					this.SendPropertyChanged("IsDelete");
+					this.OnIsDeleteChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_PhongBan", Storage="_NhanVien", ThisKey="MaNV", OtherKey="MaNV", IsForeignKey=true)]
 		public NhanVien NhanVien
 		{
@@ -689,7 +791,9 @@ namespace PhanMemQLNS.LQTOSQL
 		
 		private string _GhiChu;
 		
-		private System.Nullable<bool> _IsDelete;
+		private System.Nullable<int> _IsDelete;
+		
+		private System.Nullable<double> _TONGLUONG;
 		
 		private EntitySet<BangCong> _BangCongs;
 		
@@ -713,8 +817,10 @@ namespace PhanMemQLNS.LQTOSQL
     partial void OnNgayTaoChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
-    partial void OnIsDeleteChanging(System.Nullable<bool> value);
+    partial void OnIsDeleteChanging(System.Nullable<int> value);
     partial void OnIsDeleteChanged();
+    partial void OnTONGLUONGChanging(System.Nullable<double> value);
+    partial void OnTONGLUONGChanged();
     #endregion
 		
 		public BangLuong()
@@ -864,8 +970,8 @@ namespace PhanMemQLNS.LQTOSQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Bit")]
-		public System.Nullable<bool> IsDelete
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Int")]
+		public System.Nullable<int> IsDelete
 		{
 			get
 			{
@@ -880,6 +986,26 @@ namespace PhanMemQLNS.LQTOSQL
 					this._IsDelete = value;
 					this.SendPropertyChanged("IsDelete");
 					this.OnIsDeleteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGLUONG", DbType="Float")]
+		public System.Nullable<double> TONGLUONG
+		{
+			get
+			{
+				return this._TONGLUONG;
+			}
+			set
+			{
+				if ((this._TONGLUONG != value))
+				{
+					this.OnTONGLUONGChanging(value);
+					this.SendPropertyChanging();
+					this._TONGLUONG = value;
+					this.SendPropertyChanged("TONGLUONG");
+					this.OnTONGLUONGChanged();
 				}
 			}
 		}
@@ -971,6 +1097,8 @@ namespace PhanMemQLNS.LQTOSQL
 		
 		private string _GhiChu;
 		
+		private System.Nullable<int> _IsDelete;
+		
 		private EntityRef<HopDong> _HopDong;
 		
 		private EntityRef<NhanVien> _NhanVien;
@@ -989,6 +1117,8 @@ namespace PhanMemQLNS.LQTOSQL
     partial void OnNgayKetThucHĐChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
+    partial void OnIsDeleteChanging(System.Nullable<int> value);
+    partial void OnIsDeleteChanged();
     #endregion
 		
 		public ChiTietHĐ()
@@ -1106,6 +1236,26 @@ namespace PhanMemQLNS.LQTOSQL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Int")]
+		public System.Nullable<int> IsDelete
+		{
+			get
+			{
+				return this._IsDelete;
+			}
+			set
+			{
+				if ((this._IsDelete != value))
+				{
+					this.OnIsDeleteChanging(value);
+					this.SendPropertyChanging();
+					this._IsDelete = value;
+					this.SendPropertyChanged("IsDelete");
+					this.OnIsDeleteChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HopDong_ChiTietHĐ", Storage="_HopDong", ThisKey="MaHĐ", OtherKey="MaHĐ", IsForeignKey=true)]
 		public HopDong HopDong
 		{
@@ -1215,6 +1365,8 @@ namespace PhanMemQLNS.LQTOSQL
 		
 		private string _GhiChu;
 		
+		private System.Nullable<int> _IsDelete;
+		
 		private EntityRef<NhanVien> _NhanVien;
 		
     #region Extensibility Method Definitions
@@ -1235,6 +1387,8 @@ namespace PhanMemQLNS.LQTOSQL
     partial void OnNhiemVuChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
+    partial void OnIsDeleteChanging(System.Nullable<int> value);
+    partial void OnIsDeleteChanged();
     #endregion
 		
 		public ChucVu()
@@ -1383,6 +1537,26 @@ namespace PhanMemQLNS.LQTOSQL
 					this._GhiChu = value;
 					this.SendPropertyChanged("GhiChu");
 					this.OnGhiChuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Int")]
+		public System.Nullable<int> IsDelete
+		{
+			get
+			{
+				return this._IsDelete;
+			}
+			set
+			{
+				if ((this._IsDelete != value))
+				{
+					this.OnIsDeleteChanging(value);
+					this.SendPropertyChanging();
+					this._IsDelete = value;
+					this.SendPropertyChanged("IsDelete");
+					this.OnIsDeleteChanged();
 				}
 			}
 		}
@@ -1568,6 +1742,8 @@ namespace PhanMemQLNS.LQTOSQL
 		
 		private string _GhiChu;
 		
+		private System.Nullable<int> _IsDelete;
+		
 		private EntitySet<ChiTietHĐ> _ChiTietHĐs;
 		
     #region Extensibility Method Definitions
@@ -1584,6 +1760,8 @@ namespace PhanMemQLNS.LQTOSQL
     partial void OnThoiHanChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
+    partial void OnIsDeleteChanging(System.Nullable<int> value);
+    partial void OnIsDeleteChanged();
     #endregion
 		
 		public HopDong()
@@ -1692,6 +1870,26 @@ namespace PhanMemQLNS.LQTOSQL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Int")]
+		public System.Nullable<int> IsDelete
+		{
+			get
+			{
+				return this._IsDelete;
+			}
+			set
+			{
+				if ((this._IsDelete != value))
+				{
+					this.OnIsDeleteChanging(value);
+					this.SendPropertyChanging();
+					this._IsDelete = value;
+					this.SendPropertyChanged("IsDelete");
+					this.OnIsDeleteChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HopDong_ChiTietHĐ", Storage="_ChiTietHĐs", ThisKey="MaHĐ", OtherKey="MaHĐ")]
 		public EntitySet<ChiTietHĐ> ChiTietHĐs
 		{
@@ -1760,6 +1958,8 @@ namespace PhanMemQLNS.LQTOSQL
 		
 		private string _GhiChu;
 		
+		private System.Nullable<int> _IsDelete;
+		
 		private EntitySet<PhongBan> _PhongBans;
 		
 		private EntitySet<ChiTietHĐ> _ChiTietHĐs;
@@ -1788,6 +1988,8 @@ namespace PhanMemQLNS.LQTOSQL
     partial void OnMaTinhLuongChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
+    partial void OnIsDeleteChanging(System.Nullable<int> value);
+    partial void OnIsDeleteChanged();
     #endregion
 		
 		public NhanVien()
@@ -1959,6 +2161,26 @@ namespace PhanMemQLNS.LQTOSQL
 					this._GhiChu = value;
 					this.SendPropertyChanged("GhiChu");
 					this.OnGhiChuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Int")]
+		public System.Nullable<int> IsDelete
+		{
+			get
+			{
+				return this._IsDelete;
+			}
+			set
+			{
+				if ((this._IsDelete != value))
+				{
+					this.OnIsDeleteChanging(value);
+					this.SendPropertyChanging();
+					this._IsDelete = value;
+					this.SendPropertyChanged("IsDelete");
+					this.OnIsDeleteChanged();
 				}
 			}
 		}
