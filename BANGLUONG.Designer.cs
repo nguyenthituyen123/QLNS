@@ -88,7 +88,6 @@
             this.lb_tongluong.Name = "lb_tongluong";
             this.lb_tongluong.Size = new System.Drawing.Size(115, 23);
             this.lb_tongluong.TabIndex = 15;
-            this.lb_tongluong.Click += new System.EventHandler(this.lb_tongluong_Click);
             // 
             // dt_ngaytao
             // 
@@ -265,7 +264,6 @@
             this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 16;
             this.label8.Text = "Tổng công";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txt_tongcong
             // 

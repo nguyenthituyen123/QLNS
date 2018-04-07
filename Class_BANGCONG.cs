@@ -32,15 +32,15 @@ namespace PhanMemQLNS
         }
         public void them(BANGCONG f)
         {
-            BangCong bl = new BangCong();
-            bl.MaTinhCong = f.cbb_matinhcong.Text;
-            bl.CheDoCong = f.txt_chedocong.Text;
-            bl.SoCongNghi = f.txt_socongnghi.Text;
-            bl.SoCongTangCa = f.txt_congtangca.Text;
-            bl.MaTinhLuong = f.cbb_matinhluong.Text;
+            BangCong bc = new BangCong();
+            bc.MaTinhCong = f.cbb_matinhcong.Text;
+            bc.CheDoCong = f.txt_chedocong.Text;
+            bc.SoCongNghi = f.txt_socongnghi.Text;
+            bc.SoCongTangCa = f.txt_congtangca.Text;
+            bc.MaTinhLuong = f.cbb_matinhluong.Text;
 
-            bl.IsDelete = 1;
-            data.database().BangCongs.InsertOnSubmit(bl);
+            bc.IsDelete = 1;
+            data.database().BangCongs.InsertOnSubmit(bc);
             data.database().SubmitChanges();
 
             DialogResult thongbao = MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);

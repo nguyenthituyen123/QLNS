@@ -58,7 +58,6 @@
     <Compile Include="BANGLUONG.Designer.cs">
       <DependentUpon>BANGLUONG.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChucVu_2.cs" />
     <Compile Include="Class_BANGCONG.cs" />
     <Compile Include="Class_BANGLUONG.cs" />
     <Compile Include="Class_checker.cs" />
@@ -146,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChucvu.resx">
       <DependentUpon>frmChucvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NHANVIEN.resx">
+      <DependentUpon>NHANVIEN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PHONGBAN.resx">
       <DependentUpon>PHONGBAN.cs</DependentUpon>

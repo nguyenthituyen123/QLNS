@@ -71,18 +71,13 @@ namespace PhanMemQLNS
             int hesoluong = Convert.ToInt32(txt_hesoluong.Text);
             int tamung = Convert.ToInt32(txt_tamung.Text);
             int thuong = Convert.ToInt32(txt_thuong.Text);
-            lb_tongluong.Text = Convert.ToString(luongcoban * hesoluong - tamung + thuong);
+            int tongcong = Convert.ToInt32(txt_tongcong.Text);
+            lb_tongluong.Text = Convert.ToString(luongcoban * hesoluong * tongcong - tamung + thuong);
+
+            
         }
 
-        private void lb_tongluong_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
        
 
